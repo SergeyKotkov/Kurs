@@ -20,4 +20,3 @@ def test_sort_transactions(operations):
 
 def test_format_transactions(operations):
     assert type(format_transactions(operations)) is list
-

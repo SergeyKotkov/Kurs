@@ -33,8 +33,6 @@ def format_transactions(transactions):
     for t in transactions:
         t['date'] = datetime.strptime(t['date'], "%Y-%m-%dT%H:%M:%S.%f").strftime('%d.%m.%Y')
 
-
-
         from_acc = t.get('from', 'N/A').split()
         if 'Счет' in from_acc:
             t['from'] = 'Счет **' + from_acc[-1][-4:]
@@ -50,6 +48,7 @@ def format_transactions(transactions):
             t['to'] = ' '.join(to_acc[:-1]) + ' ' + mask_card_number(to_acc[-1:][0])
 
     return transactions
+
 
 def print_transaction(transactions):
     for t in format_transactions(transactions):
