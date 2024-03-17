@@ -1,5 +1,14 @@
-from utils import sort_transactions
+from utils import mask_account_number, mask_card_number, load_transactions
 
 
-def test_sort_transactions():
-    assert sort_transactions("2018-06-30T02:08:58.425572") == "30.06.2018"
+def test_mask_account_number():
+    assert mask_account_number('7158300734726758') == '****6758'
+
+def test_mask_card_number():
+    assert mask_card_number('7158300734726758') == '715830******6758'
+
+def test_load_transactions():
+    assert load_transactions is not None
+    assert load_transactions() >= 0
+
+

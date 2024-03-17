@@ -49,3 +49,4 @@ def format_and_print_transactions(transactions):
         print(f"{date} {description}")
         print(f"{from_acc} -> {to_acc}")
         print(f"{amount} {currency}\n")
+
